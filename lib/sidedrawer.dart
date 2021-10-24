@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-class drawerItems extends StatefulWidget {
-  const drawerItems({Key? key}) : super(key: key);
+class draweritems extends StatefulWidget {
+  const draweritems({Key? key}) : super(key: key);
 
   @override
-  _drawerItemsState createState() => _drawerItemsState();
+  _draweritemsState createState() => _draweritemsState();
 }
 
-class _drawerItemsState extends State<drawerItems> {
+class _draweritemsState extends State<draweritems> {
   @override
   Widget build(BuildContext context) {
     return Container(
