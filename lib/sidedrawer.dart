@@ -11,7 +11,6 @@ class _drawerItemsState extends State<drawerItems> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
         child: Row(
           children: [
             Text("Side Bar Stuffs"),
