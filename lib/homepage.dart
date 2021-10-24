@@ -1,11 +1,12 @@
 
+import 'package:civitas/pinboard.dart';
 import 'package:civitas/services.dart';
 import 'package:civitas/sideDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 List<String>servicesList=['Trash Man', 'Vehicle Mng', 'Gossips', 'Complaints', 'News', 'Coming Soon'];
-List<IconData>iconList=[Icons.garage,Icons.car_rental,Icons.chat,Icons.comment, Icons.chrome_reader_mode, Icons.construction];
+List<IconData>iconList=[Icons.restore_from_trash,Icons.car_rental,Icons.chat,Icons.warning, Icons.chrome_reader_mode, Icons.construction];
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
