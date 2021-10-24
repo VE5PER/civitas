@@ -1,12 +1,25 @@
-
 import 'package:civitas/pinboard.dart';
 import 'package:civitas/services.dart';
 import 'package:civitas/sideDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-List<String>servicesList=['Trash Man', 'Vehicle Mng', 'Gossips', 'Complaints', 'News', 'Coming Soon'];
-List<IconData>iconList=[Icons.restore_from_trash,Icons.car_rental,Icons.chat,Icons.warning, Icons.chrome_reader_mode, Icons.construction];
+List<String> servicesList = [
+  'Trash Man',
+  'Vehicle Mng',
+  'Gossips',
+  'Complaints',
+  'News',
+  'Coming Soon'
+];
+List<IconData> iconList = [
+  Icons.restore_from_trash,
+  Icons.car_rental,
+  Icons.chat,
+  Icons.warning,
+  Icons.chrome_reader_mode,
+  Icons.construction
+];
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -27,10 +40,27 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: SafeArea(
-        child: GridView.count(
-          crossAxisCount: 2,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            for (int i = 0; i < 6; i++) service(number: i, serviceName: servicesList[i], iconData: iconList[i],),
+            pinboard(),
+            Expanded(
+              child: Scrollbar(
+                thickness: 3,
+                radius: Radius.circular(10),
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  children: [
+                    for (int i = 0; i < 6; i++)
+                      service(
+                        number: i,
+                        serviceName: servicesList[i],
+                        iconData: iconList[i],
+                      ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
