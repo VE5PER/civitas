@@ -13,7 +13,12 @@ class _pinboardState extends State<pinboard> {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      options: CarouselOptions(height: 250, scrollDirection: Axis.horizontal),
+      options: CarouselOptions(
+        height: 250,
+        scrollDirection: Axis.horizontal,
+        autoPlay: true,
+        autoPlayInterval: const Duration(seconds: 2),
+      ),
       items: [1, 2, 3, 4, 5].map((i) {
         return Builder(
           builder: (BuildContext context) {

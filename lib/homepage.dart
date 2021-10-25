@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: GridView.count(
                   crossAxisCount: 2,
                   children: [
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < servicesList.length; i++)
                       service(
                         number: i,
                         serviceName: servicesList[i],
