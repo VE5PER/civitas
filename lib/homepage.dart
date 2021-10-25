@@ -3,6 +3,7 @@ import 'package:civitas/services.dart';
 import 'package:civitas/sideDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:civitas/profile/profile.dart';
 
 List<String> servicesList = [
   'Trash Man',
@@ -36,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("CIVITAS"),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
+          popupProfileButton()
+          // IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
         ],
       ),
       body: SafeArea(
