@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'manageAccount.dart';
+import 'viewProfile.dart';
 
 class popupProfileButton extends StatefulWidget {
   @override
@@ -11,13 +13,16 @@ class _popupProfileButtonState extends State<popupProfileButton> {
   void selectedItem(BuildContext context, int item) {
     switch (item) {
       case 0:
-        print('item1');
+        print('View Profile');
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => displayProfile()));
         break;
       case 1:
-        print('item2');
+        print('Manage Profile');
         break;
       case 2:
         print('logout');
+        Navigator.pop(context);
         break;
     }
   }
