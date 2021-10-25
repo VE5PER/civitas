@@ -1,3 +1,4 @@
+import 'package:civitas/sidedrawer.dart';
 import 'package:flutter/material.dart';
 
 class settings extends StatefulWidget {
@@ -15,6 +16,7 @@ class _settingsState extends State<settings> {
         title: const Text('Settings',style: TextStyle(fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
+      drawer: draweritems(),
     );
   }
 }
