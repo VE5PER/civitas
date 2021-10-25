@@ -1,4 +1,5 @@
 import 'package:civitas/pinboard.dart';
+import 'package:civitas/profile/profilecontent.dart';
 import 'package:civitas/services.dart';
 import 'package:civitas/sideDrawer.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,6 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  userinfo currentUser =
+      userinfo(name: 'kaipulla', email: 'kaipulla@pichu.com');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("CIVITAS"),
         centerTitle: true,
         actions: [
-          popupProfileButton()
+          PopUpProfileButton(currentUser)
           // IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
         ],
       ),

@@ -1,21 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'manageAccount.dart';
-import 'viewProfile.dart';
+import 'package:civitas/profile/profilecontent.dart';
+import 'manageaccount.dart';
+import 'viewprofile.dart';
 
-class popupProfileButton extends StatefulWidget {
+class PopUpProfileButton extends StatefulWidget {
+  userinfo currentUser;
+  PopUpProfileButton(this.currentUser);
+
   @override
-  _popupProfileButtonState createState() => _popupProfileButtonState();
+  _PopUpProfileButtonState createState() => _PopUpProfileButtonState();
 }
 
-class _popupProfileButtonState extends State<popupProfileButton> {
-  @override
+class _PopUpProfileButtonState extends State<PopUpProfileButton> {
   void selectedItem(BuildContext context, int item) {
     switch (item) {
       case 0:
         print('View Profile');
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => displayProfile()));
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DisplayProfile(
+                  widget.currentUser,
+                )));
         break;
       case 1:
         print('Manage Profile');
@@ -30,24 +35,23 @@ class _popupProfileButtonState extends State<popupProfileButton> {
   Widget build(BuildContext context) {
     return PopupMenuButton<int>(
       child: Padding(
-        padding: const EdgeInsets.only(right: 4),
-        child: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/blank_profile.png')),
+        padding: EdgeInsets.only(right: 4),
+        child: CircleAvatar(backgroundImage: widget.currentUser.profilepic),
       ),
       itemBuilder: (context) => [
         PopupMenuItem(
           child: ListTile(
-            title: Text('Name'),
-            subtitle: Text('name@email.com'),
+            title: Text(widget.currentUser.name),
+            subtitle: Text(widget.currentUser.email),
             leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/blank_profile.png'),
+              backgroundImage: widget.currentUser.profilepic,
             ),
           ),
           value: 0,
         ),
         PopupMenuItem(
           child: Row(
-            children: [
+            children: const [
               Icon(
                 Icons.manage_accounts,
                 color: Colors.blue,
@@ -60,12 +64,12 @@ class _popupProfileButtonState extends State<popupProfileButton> {
           ),
           value: 1,
         ),
-        PopupMenuDivider(
+        const PopupMenuDivider(
           height: 5,
         ),
         PopupMenuItem(
           child: Row(
-            children: [
+            children: const [
               Icon(
                 Icons.logout,
                 color: Colors.blue,
