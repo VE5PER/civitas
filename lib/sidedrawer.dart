@@ -32,15 +32,9 @@ class _draweritemsState extends State<draweritems> {
             ),
             const SizedBox(height: 18),
             listViewItems(
-              text: 'Home',
-              icon: Icons.home_rounded,
-              onClicked: ()=> selectedItem(context,1),
-            ),
-            const SizedBox(height: 18),
-            listViewItems(
               text: 'Settings',
               icon: Icons.settings,
-              onClicked: ()=> selectedItem(context,2),
+              onClicked: ()=> selectedItem(context,1),
             ),
             const SizedBox(height: 35),
             const Divider(color: Colors.white,),
@@ -48,19 +42,19 @@ class _draweritemsState extends State<draweritems> {
             listViewItems(
               text: 'Report an Issue',
               icon: Icons.bug_report_rounded,
-              onClicked: ()=> selectedItem(context,3),
+              onClicked: ()=> selectedItem(context,2),
             ),
             const SizedBox(height: 18),
             listViewItems(
               text: 'About Us',
               icon: Icons.info_rounded,
-              onClicked: ()=> selectedItem(context,4),
+              onClicked: ()=> selectedItem(context,3),
             ),
             const SizedBox(height: 20),
             listViewItems(
               text: 'Rate Us',
               icon: Icons.star_rate_rounded,
-              onClicked: ()=> selectedItem(context,5),
+              onClicked: ()=> selectedItem(context,4),
             ),
           ],
         ),
@@ -92,25 +86,20 @@ class _draweritemsState extends State<draweritems> {
         break;
       case 1:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context)=> MyHomePage(),
+          builder: (context)=> settings(),
         ));
         break;
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context)=> settings(),
+          builder: (context)=> reportissue(),
         ));
         break;
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context)=> reportissue(),
-        ));
-        break;
-      case 4:
-        Navigator.of(context).push(MaterialPageRoute(
           builder: (context)=> aboutus(),
         ));
         break;
-      case 5:
+      case 4:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context)=> rateus(),
         ));
