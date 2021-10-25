@@ -9,7 +9,7 @@ void main() {
 
 class LoginUiApp extends StatelessWidget {
 
-  Color _primaryColor = HexColor('#DC54FE');
+  Color _primaryColor = HexColor('#87CEEB');
   Color _accentColor = HexColor('#8A02AE');
 
   // Design color
