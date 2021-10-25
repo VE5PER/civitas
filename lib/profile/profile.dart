@@ -24,17 +24,34 @@ class _popupProfileButtonState extends State<popupProfileButton> {
 
   Widget build(BuildContext context) {
     return PopupMenuButton<int>(
-      icon: Icon(Icons.account_circle),
+      child: Padding(
+        padding: const EdgeInsets.only(right: 4),
+        child: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/blank_profile.png')),
+      ),
       itemBuilder: (context) => [
         PopupMenuItem(
-          child: Text(
-            'item1',
+          child: ListTile(
+            title: Text('Name'),
+            subtitle: Text('name@email.com'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/blank_profile.png'),
+            ),
           ),
           value: 0,
         ),
         PopupMenuItem(
-          child: Text(
-            'item2',
+          child: Row(
+            children: [
+              Icon(
+                Icons.manage_accounts,
+                color: Colors.blue,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text('Manage account'),
+            ],
           ),
           value: 1,
         ),
@@ -44,7 +61,10 @@ class _popupProfileButtonState extends State<popupProfileButton> {
         PopupMenuItem(
           child: Row(
             children: [
-              Icon(Icons.logout),
+              Icon(
+                Icons.logout,
+                color: Colors.blue,
+              ),
               SizedBox(
                 width: 10,
               ),
