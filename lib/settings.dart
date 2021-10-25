@@ -15,7 +15,6 @@ class _settingsState extends State<settings> {
         title: const Text('Settings',style: TextStyle(fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
-
     );
   }
 }
