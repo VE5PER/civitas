@@ -13,7 +13,7 @@ class _newsState extends State<news> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GOSSIPS"),
+        title: Text("NEWS"),
       ),
     );
   }
