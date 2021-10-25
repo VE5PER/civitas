@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 
-class aboutus extends StatefulWidget {
+class aboutus extends StatelessWidget {
   const aboutus({Key? key}) : super(key: key);
 
-  @override
-  _aboutusState createState() => _aboutusState();
-}
-
-class _aboutusState extends State<aboutus> {
   @override
   Widget build(BuildContext context) {
     return Container();
   }
 }
+
+
