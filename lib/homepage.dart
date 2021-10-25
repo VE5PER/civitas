@@ -31,8 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  userinfo currentUser =
-      userinfo(name: 'kaipulla', email: 'kaipulla@pichu.com');
+  userinfo currentUser = userinfo(
+      name: 'kaipulla', email: 'kaipulla@pichu.com', location: 'anna nagar');
   @override
   Widget build(BuildContext context) {
     return Scaffold(

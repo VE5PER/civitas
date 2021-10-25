@@ -13,8 +13,20 @@ class DisplayProfile extends StatefulWidget {
 }
 
 class _DisplayProfileState extends State<DisplayProfile> {
+  TextEditingController _namecontroller = TextEditingController();
+  TextEditingController _phonecontroller = TextEditingController();
+  TextEditingController _addresscontroller = TextEditingController();
+  TextEditingController _areacontroller = TextEditingController();
+  TextEditingController _aadharcontroller = TextEditingController();
+
+  bool _editmode = false;
   @override
   Widget build(BuildContext context) {
+    _namecontroller.text = widget.currentUser.name;
+    _phonecontroller.text = widget.currentUser.phone;
+    _addresscontroller.text = widget.currentUser.address;
+    _areacontroller.text = widget.currentUser.location;
+    _aadharcontroller.text = widget.currentUser.aadhar;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
@@ -27,65 +39,169 @@ class _DisplayProfileState extends State<DisplayProfile> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.edit),
-            onPressed: () {},
+            icon: Icon(_editmode ? Icons.done : Icons.edit),
+            onPressed: () {
+              setState(() {
+                _editmode = !_editmode;
+              });
+            },
           )
         ],
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: InkWell(
-                    onTap: () async {
-                      String selected = await showModalBottomSheet(
-                        context: context,
-                        builder: (context) => PopUpScreen(),
-                      );
-                      print(selected);
-                      if (selected == 'null') {
-                        print('No change');
-                      } else {
-                        var sel = ImageSource.gallery;
-                        sel = selected == 'Gallery'
-                            ? ImageSource.gallery
-                            : ImageSource.camera;
-                        final ImagePicker _picker = ImagePicker();
-                        final XFile? image =
-                            await _picker.pickImage(source: sel);
-                        var path = File(image!.path);
-                        ImageProvider newImage = FileImage(path);
-                        widget.currentUser.setProfile(newImage);
-                        setState(() {});
-                      }
-                    },
-                    child: CircleAvatar(
-                        radius: 50,
-                        child: Container(
-                          child: const Text(
-                            'EDIT',
-                            style: TextStyle(
-                                backgroundColor: Colors.white,
-                                color: Colors.blue),
-                          ),
-                        ),
-                        backgroundImage: widget.currentUser.profilepic),
-                  )),
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    Text(widget.currentUser.name),
-                    Text(widget.currentUser.email),
+                    Expanded(
+                        flex: 1,
+                        child: InkWell(
+                          onTap: () async {
+                            String selected = await showModalBottomSheet(
+                              context: context,
+                              builder: (context) => PopUpScreen(),
+                            );
+                            print(selected);
+                            if (selected == 'null') {
+                              print('No change');
+                            } else {
+                              var sel = ImageSource.gallery;
+                              sel = selected == 'Gallery'
+                                  ? ImageSource.gallery
+                                  : ImageSource.camera;
+                              final ImagePicker _picker = ImagePicker();
+                              final XFile? image =
+                                  await _picker.pickImage(source: sel);
+                              var path = File(image!.path);
+                              ImageProvider newImage = FileImage(path);
+                              widget.currentUser.setProfile(newImage);
+                              setState(() {});
+                            }
+                          },
+                          child: CircleAvatar(
+                              radius: 50,
+                              child: Container(
+                                child: const Text(
+                                  'EDIT',
+                                  style: TextStyle(
+                                      backgroundColor: Colors.white,
+                                      color: Colors.blue),
+                                ),
+                              ),
+                              backgroundImage: widget.currentUser.profilepic),
+                        )),
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextField(
+                            enabled: _editmode,
+                            controller: _namecontroller,
+                            keyboardType: TextInputType.name,
+                            onChanged: (str) {
+                              widget.currentUser.name = str;
+                            },
+                            decoration: const InputDecoration(
+                              disabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.green),
+                              ),
+                              labelText: "Name",
+                              border: OutlineInputBorder(),
+                              filled: true,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              )
-            ],
-          )
-        ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    enabled: _editmode,
+                    controller: _phonecontroller,
+                    keyboardType: TextInputType.phone,
+                    maxLength: 10,
+                    onChanged: (str) {
+                      widget.currentUser.phone = str;
+                    },
+                    decoration: const InputDecoration(
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green),
+                      ),
+                      labelText: "Phone",
+                      border: OutlineInputBorder(),
+                      filled: true,
+                    ),
+                  ),
+                ), // Phone
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    enabled: _editmode,
+                    controller: _addresscontroller,
+                    keyboardType: TextInputType.text,
+                    onChanged: (str) {
+                      widget.currentUser.address = str;
+                    },
+                    decoration: const InputDecoration(
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green),
+                      ),
+                      labelText: "Address",
+                      border: OutlineInputBorder(),
+                      filled: true,
+                    ),
+                    maxLines: 5,
+                  ),
+                ), //address
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    enabled: _editmode,
+                    controller: _aadharcontroller,
+                    keyboardType: TextInputType.number,
+                    maxLength: 12,
+                    onChanged: (str) {
+                      widget.currentUser.aadhar = str;
+                    },
+                    decoration: const InputDecoration(
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green),
+                      ),
+                      labelText: "Aadhar",
+                      border: OutlineInputBorder(),
+                      filled: true,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    enabled: _editmode,
+                    controller: _areacontroller,
+                    keyboardType: TextInputType.text,
+                    onChanged: (str) {
+                      widget.currentUser.location = str;
+                    },
+                    decoration: const InputDecoration(
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green),
+                      ),
+                      labelText: "Location",
+                      border: OutlineInputBorder(),
+                      filled: true,
+                    ),
+                  ),
+                ), //aadhar
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
