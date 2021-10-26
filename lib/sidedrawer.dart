@@ -18,48 +18,51 @@ class _draweritemsState extends State<draweritems> {
   final padding=EdgeInsets.symmetric(horizontal: 25,vertical: 25);
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Material(
-        color: Colors.indigoAccent,
-        child: ListView(
-          padding: padding,
-          children: <Widget>[
-            const SizedBox(height: 18),
-            listViewItems(
-              text: 'Notifications',
-              icon: Icons.notifications_active,
-              onClicked: ()=> selectedItem(context,0),
+    return SafeArea(
+      child:
+        Drawer(
+          child: Material(
+            color: Colors.indigoAccent,
+            child: ListView(
+              padding: padding,
+              children: <Widget>[
+                const SizedBox(height: 18),
+                listViewItems(
+                  text: 'Notifications',
+                  icon: Icons.notifications_active,
+                  onClicked: ()=> selectedItem(context,0),
+                ),
+                const SizedBox(height: 18),
+                listViewItems(
+                  text: 'Settings',
+                  icon: Icons.settings,
+                  onClicked: ()=> selectedItem(context,1),
+                ),
+                const SizedBox(height: 35),
+                const Divider(color: Colors.white,),
+                const SizedBox(height: 18),
+                listViewItems(
+                  text: 'Report an Issue',
+                  icon: Icons.bug_report_rounded,
+                  onClicked: ()=> selectedItem(context,2),
+                ),
+                const SizedBox(height: 18),
+                listViewItems(
+                  text: 'About Us',
+                  icon: Icons.info_rounded,
+                  onClicked: ()=> selectedItem(context,3),
+                ),
+                const SizedBox(height: 20),
+                listViewItems(
+                  text: 'Rate Us',
+                  icon: Icons.star_rate_rounded,
+                  onClicked: ()=> selectedItem(context,4),
+                ),
+              ],
             ),
-            const SizedBox(height: 18),
-            listViewItems(
-              text: 'Settings',
-              icon: Icons.settings,
-              onClicked: ()=> selectedItem(context,1),
-            ),
-            const SizedBox(height: 35),
-            const Divider(color: Colors.white,),
-            const SizedBox(height: 18),
-            listViewItems(
-              text: 'Report an Issue',
-              icon: Icons.bug_report_rounded,
-              onClicked: ()=> selectedItem(context,2),
-            ),
-            const SizedBox(height: 18),
-            listViewItems(
-              text: 'About Us',
-              icon: Icons.info_rounded,
-              onClicked: ()=> selectedItem(context,3),
-            ),
-            const SizedBox(height: 20),
-            listViewItems(
-              text: 'Rate Us',
-              icon: Icons.star_rate_rounded,
-              onClicked: ()=> selectedItem(context,4),
-            ),
-          ],
-        ),
 
-      ),
+          ),
+        ),
     );
   }
   Widget listViewItems(

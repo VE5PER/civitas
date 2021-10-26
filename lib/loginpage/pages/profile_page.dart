@@ -88,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage>{
                 ),
                 child: Container(
                   alignment: Alignment.bottomLeft,
-                  child: Text("FlutterTutorial.Net",
+                  child: Text("Menu",
                     style: TextStyle(fontSize: 25,color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -167,9 +167,9 @@ class _ProfilePageState extends State<ProfilePage>{
                     child: Icon(Icons.person, size: 80, color: Colors.grey.shade300,),
                   ),
                   SizedBox(height: 20,),
-                  Text('Mr. Donald Trump', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+                  Text('S.Vigneshwararaj', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
                   SizedBox(height: 20,),
-                  Text('Former President', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                  Text('Prime Minister', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                   SizedBox(height: 10,),
                   Container(
                     padding: EdgeInsets.all(10),
@@ -204,17 +204,17 @@ class _ProfilePageState extends State<ProfilePage>{
                                               horizontal: 12, vertical: 4),
                                           leading: Icon(Icons.my_location),
                                           title: Text("Location"),
-                                          subtitle: Text("USA"),
+                                          subtitle: Text("India"),
                                         ),
                                         ListTile(
                                           leading: Icon(Icons.email),
                                           title: Text("Email"),
-                                          subtitle: Text("donaldtrump@gmail.com"),
+                                          subtitle: Text("vignesh181201@gmail.com"),
                                         ),
                                         ListTile(
                                           leading: Icon(Icons.phone),
                                           title: Text("Phone"),
-                                          subtitle: Text("99--99876-56"),
+                                          subtitle: Text("8825915180"),
                                         ),
                                         ListTile(
                                           leading: Icon(Icons.person),
