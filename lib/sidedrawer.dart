@@ -58,6 +58,12 @@ class _draweritemsState extends State<draweritems> {
                   icon: Icons.star_rate_rounded,
                   onClicked: ()=> selectedItem(context,4),
                 ),
+                const SizedBox(height: 20),
+                listViewItems(
+                  text: 'Tell a friend',
+                  icon: Icons.share_rounded,
+                  onClicked: ()=> selectedItem(context,5),
+                )
               ],
             ),
 

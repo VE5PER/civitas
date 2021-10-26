@@ -18,8 +18,8 @@ class _settingsState extends State<settings> {
       appBar: AppBar(
         title: const Text('Settings',style: TextStyle(fontWeight: FontWeight.bold),),
         centerTitle: true,
+        leading: IconButton(onPressed: () { Navigator.pop(context); }, icon: Icon(Icons.arrow_back_rounded),),
       ),
-      drawer: draweritems(),
       body:
         SettingsList(
           contentPadding: EdgeInsets.symmetric(vertical: 20),
