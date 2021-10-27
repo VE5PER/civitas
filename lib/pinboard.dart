@@ -1,4 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:civitas/pinboarditems/empty.dart';
+import 'package:civitas/pinboarditems/pg1.dart';
+import 'package:civitas/pinboarditems/pg2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,24 +22,7 @@ class _pinboardState extends State<pinboard> {
         autoPlay: true,
         autoPlayInterval: const Duration(seconds: 2),
       ),
-      items: [1, 2, 3, 4, 5].map((i) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.orangeAccent),
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 20),
-                child: Center(
-                  child: Text(
-                    'Text $i',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                  ),
-                ));
-          },
-        );
-      }).toList(),
+      items: [pg1(),pg2(),empty()],
     );
   }
 }
