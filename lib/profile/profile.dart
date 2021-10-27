@@ -21,13 +21,19 @@ class _PopUpProfileButtonState extends State<PopUpProfileButton> {
             builder: (context) => DisplayProfile(
                   widget.currentUser,
                 )));
+        setState(() {});
         break;
       case 1:
         print('Manage Profile');
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => ManageAccountPage(
+                  widget.currentUser,
+                )));
+        setState(() {});
         break;
       case 2:
         print('logout');
-        Navigator.pop(context);
+        // Navigator.pop(context);
         break;
     }
   }
@@ -45,6 +51,7 @@ class _PopUpProfileButtonState extends State<PopUpProfileButton> {
             subtitle: Text(widget.currentUser.email),
             leading: CircleAvatar(
               backgroundImage: widget.currentUser.profilepic,
+              radius: 30,
             ),
           ),
           value: 0,

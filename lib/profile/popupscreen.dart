@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'customwidgets.dart';
 
 class PopUpScreen extends StatelessWidget {
   late String selected;
@@ -21,9 +22,21 @@ class PopUpScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            CustomButton(title: 'Camera', returnValue: 'Camera'),
-            CustomButton(title: 'Gallery', returnValue: 'Gallery'),
-            CustomButton(title: 'Cancel', returnValue: 'null'),
+            roundedButton(
+              buttonColor: Colors.blue,
+              buttonText: 'Camera',
+              returnValue: 'Camera',
+            ),
+            roundedButton(
+              buttonColor: Colors.blue,
+              buttonText: 'Gallery',
+              returnValue: 'Gallery',
+            ),
+            roundedButton(
+              buttonColor: Colors.red,
+              buttonText: 'Cancel',
+              returnValue: 'null',
+            ),
           ],
         ),
         decoration: const BoxDecoration(
@@ -35,28 +48,5 @@ class PopUpScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class CustomButton extends StatelessWidget {
-  String title;
-  String returnValue;
-  CustomButton({required this.title, required this.returnValue});
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-        onPressed: () {
-          Navigator.pop(context, returnValue);
-        },
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-        ),
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
-          ),
-        ));
   }
 }
