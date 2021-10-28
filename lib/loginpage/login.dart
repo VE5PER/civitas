@@ -3,10 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 import 'pages/splash_screen.dart';
 
-
-
 class LoginUiApp extends StatelessWidget {
-
   Color _primaryColor = HexColor('#5174FF');
   Color _accentColor = HexColor('#3CABFF');
 

@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,17 +10,15 @@ import 'forgot_password_page.dart';
 import 'forgot_password_verification_page.dart';
 import 'registration_page.dart';
 
-class ProfilePage extends StatefulWidget{
-
+class ProfilePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-     return _ProfilePageState();
+    return _ProfilePageState();
   }
 }
 
-class _ProfilePageState extends State<ProfilePage>{
-
-  double  _drawerIconSize = 24;
+class _ProfilePageState extends State<ProfilePage> {
+  double _drawerIconSize = 24;
   double _drawerFontSize = 17;
 
   @override
@@ -245,5 +242,4 @@ class _ProfilePageState extends State<ProfilePage>{
       ),
     );*/
   }
-
 }

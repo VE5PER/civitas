@@ -7,26 +7,24 @@ import 'package:civitas/services/vehiclemng.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class service extends StatefulWidget {
   final int number;
   final String serviceName;
   final IconData iconData;
 
-  const service(
-      {Key? key,
-      required this.number,
-      required this.serviceName,
-      required this.iconData,
-})
-      : super(key: key);
+  const service({
+    Key? key,
+    required this.number,
+    required this.serviceName,
+    required this.iconData,
+  }) : super(key: key);
 
   @override
   _serviceState createState() => _serviceState(
-      number: this.number,
-      serviceName: this.serviceName,
-      iconData: this.iconData,
-);
+        number: this.number,
+        serviceName: this.serviceName,
+        iconData: this.iconData,
+      );
 }
 
 class _serviceState extends State<service> {
@@ -34,16 +32,16 @@ class _serviceState extends State<service> {
   String serviceName;
   IconData iconData;
 
-  _serviceState(
-      {required this.number,
-      required this.serviceName,
-      required this.iconData,
-});
+  _serviceState({
+    required this.number,
+    required this.serviceName,
+    required this.iconData,
+  });
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-goToPage(serviceName, context);
+        goToPage(serviceName, context);
       },
       child: Container(
         width: 25,
@@ -64,22 +62,16 @@ goToPage(serviceName, context);
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[
-                Color(0xfff9f047),
-                Color(0xff0fd850)
-              ]
-            )
-        ),
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[Color(0xfff9f047), Color(0xff0fd850)])),
       ),
     );
   }
 }
 
-
-void goToPage(String pageName, BuildContext context){
-  switch(pageName){
+void goToPage(String pageName, BuildContext context) {
+  switch (pageName) {
     case 'Trash Man':
       Navigator.push(
         context,
@@ -116,7 +108,5 @@ void goToPage(String pageName, BuildContext context){
         MaterialPageRoute(builder: (context) => const comingsoon()),
       );
       break;
-
-
   }
 }

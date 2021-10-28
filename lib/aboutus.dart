@@ -8,5 +8,3 @@ class aboutus extends StatelessWidget {
     return Container();
   }
 }
-
-

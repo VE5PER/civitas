@@ -13,10 +13,10 @@ class _notificationState extends State<notification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications',style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('Notifications',
+            style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
-
     );
   }
 }

@@ -15,20 +15,18 @@ class _pg1State extends State<pg1> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             gradient: LinearGradient(
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-              colors: [
-                Color(0xfff83600),
-                Color(0xfff9d423)
-              ]
-            )),
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [Color(0xfff83600), Color(0xfff9d423)])),
         width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 20),
         padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20),
         child: const Center(
           child: Text(
             'WELCOME TO CIVITAS',
-            style: TextStyle( fontSize: 30,fontFamily: 'Henny Penny',letterSpacing: 5), textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 30, fontFamily: 'Henny Penny', letterSpacing: 5),
+            textAlign: TextAlign.center,
           ),
         ));
   }

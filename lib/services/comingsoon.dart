@@ -15,7 +15,11 @@ class _comingsoonState extends State<comingsoon> {
       appBar: AppBar(
         title: Text("COMING SOON"),
       ),
-      body: Center(child: Icon(Icons.report_gmailerrorred_outlined, size: 500,)),
+      body: Center(
+          child: Icon(
+        Icons.report_gmailerrorred_outlined,
+        size: 500,
+      )),
     );
   }
 }

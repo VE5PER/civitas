@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Icon(
                       Icons.menu,
-                       color: Colors.white,
+                      color: Colors.white,
                     ),
                     SizedBox(
                       width: size.width / 4,
@@ -133,10 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   model.title,
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,color: Colors.white
-                    
-                  ),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
               ),
               Container(
@@ -144,9 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child: Text(
                   model.description,
-                  style: TextStyle(
-                    fontSize: 15,color: Colors.white
-                  ),
+                  style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
               ),
             ],

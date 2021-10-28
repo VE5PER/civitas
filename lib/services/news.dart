@@ -1,4 +1,3 @@
-
 import 'package:civitas/services/news/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,18 +12,17 @@ class news extends StatefulWidget {
 class _newsState extends State<news> {
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
+    return MaterialApp(
       title: 'Civitas News',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
-
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
     );
   }
 }
+
 void main() {
   runApp(news());
 }
@@ -45,6 +43,3 @@ void main() {
     );
   }
 }*/
-
-      
-    

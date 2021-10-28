@@ -26,9 +26,8 @@ class _pinboardState extends State<pinboard> {
         autoPlayCurve: Curves.fastOutSlowIn,
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
-
       ),
-      items: [pg1(),pg2(),  pg3(),empty(),empty()],
+      items: [pg1(), pg2(), pg3(), empty(), empty()],
     );
   }
 }

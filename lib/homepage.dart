@@ -41,17 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           flexibleSpace: Container(
             height: MediaQuery.of(context).size.height,
-            child: Center(child: Text('CIVITAS',style: TextStyle(fontFamily: 'Henny Penny',fontSize: 25,)),),
+            child: Center(
+              child: Text('CIVITAS',
+                  style: TextStyle(
+                    fontFamily: 'Henny Penny',
+                    fontSize: 25,
+                  )),
+            ),
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: <Color>[
-                      Color(0xff6a11cb),
-                      Color(0xff2575fc),
-                    ]
-                )
-            ),
+                  Color(0xff6a11cb),
+                  Color(0xff2575fc),
+                ])),
           ),
           centerTitle: true,
           actions: [

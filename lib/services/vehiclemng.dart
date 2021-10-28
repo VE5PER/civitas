@@ -14,28 +14,30 @@ class vehiclemng extends StatefulWidget {
 }
 
 class _vehiclemngState extends State<vehiclemng> {
-  Set<Marker> _markers =HashSet<Marker>();
+  Set<Marker> _markers = HashSet<Marker>();
   late GoogleMapController _mapController;
   late BitmapDescriptor _markerIcon;
-  List<Marker> myMarker=[];
+  List<Marker> myMarker = [];
   late LatLng tappedPoint;
 
-  void _setMarkerIcon() async{
-    _markerIcon=await BitmapDescriptor.fromAssetImage(ImageConfiguration(), 'assets/ping_icon.png');
+  void _setMarkerIcon() async {
+    _markerIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(), 'assets/ping_icon.png');
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("VEHICLE MNG"),
-      ),
+        appBar: AppBar(
+          title: Text("VEHICLE MNG"),
+        ),
         body: Stack(
           children: <Widget>[
             GoogleMap(
               myLocationEnabled: true,
               myLocationButtonEnabled: true,
               initialCameraPosition: CameraPosition(
-                target: LatLng(13.082680,80.270721),
+                target: LatLng(13.082680, 80.270721),
                 zoom: 12,
               ),
               markers: Set.from(myMarker),
@@ -48,19 +50,17 @@ class _vehiclemngState extends State<vehiclemng> {
               padding: EdgeInsets.fromLTRB(0, 0, 60, 30),
               child: FloatingActionButton(
                   backgroundColor: Colors.indigo,
-                  onPressed: (){
+                  onPressed: () {
                     handleTap(tappedPoint);
                   },
-                  child: const Icon(Icons.location_on_rounded)
-              ),
+                  child: const Icon(Icons.location_on_rounded)),
             ),
             Container(
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.fromLTRB(60, 0, 0, 30),
               child: FloatingActionButton(
                   backgroundColor: Colors.indigo,
-
-                  onPressed: ()async {
+                  onPressed: () async {
                     String selected = await showModalBottomSheet(
                       context: context,
                       builder: (context) => PopUpScreen(),
@@ -77,24 +77,19 @@ class _vehiclemngState extends State<vehiclemng> {
                       final XFile? image = await _picker.pickImage(source: sel);
                     }
                   },
-                  child: const Icon(Icons.directions_car)
-
-              ),
+                  child: const Icon(Icons.directions_car)),
             ),
           ],
-        )
-    );
+        ));
   }
-  handleTap(LatLng tappedPoint)
-  {
+
+  handleTap(LatLng tappedPoint) {
     setState(() {
-      myMarker=[];
-      myMarker.add(
-          Marker(
-            markerId: MarkerId(tappedPoint.toString()),
-            position: tappedPoint,
-          )
-      );
+      myMarker = [];
+      myMarker.add(Marker(
+        markerId: MarkerId(tappedPoint.toString()),
+        position: tappedPoint,
+      ));
     });
   }
 }
