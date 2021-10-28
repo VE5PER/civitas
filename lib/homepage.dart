@@ -38,7 +38,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CIVITAS"),
+        flexibleSpace: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Center(child: Text("CIVITAS",style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,fontFamily: 'Pacifico')),),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                    Color(0xff6a11cb),
+                    Color(0xff2575fc),
+                  ]
+              )
+          ),
+        ),
         centerTitle: true,
         actions: [
           PopUpProfileButton(currentUser)
