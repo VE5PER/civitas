@@ -1,3 +1,4 @@
+import 'package:civitas/loginpage/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:civitas/profile/profilecontent.dart';
@@ -33,6 +34,9 @@ class _PopUpProfileButtonState extends State<PopUpProfileButton> {
         break;
       case 2:
         print('logout');
+        Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoginUiApp()),);
         // Navigator.pop(context);
         break;
     }

@@ -3,6 +3,7 @@ import 'package:civitas/sidedrawer.dart';
 import 'package:flutter/material.dart';
 
 import 'homepage.dart';
+import 'loginpage/login.dart';
 
 void main() {
   runApp(
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: LoginUiApp(),
     );
   }
 }

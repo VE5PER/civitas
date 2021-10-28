@@ -6,6 +6,7 @@ import 'package:civitas/loginpage/pages/login_page.dart';
 import 'package:civitas/loginpage/pages/splash_screen.dart';
 import 'package:civitas/loginpage/pages/widgets/header_widget.dart';
 
+import '../../homepage.dart';
 import 'forgot_password_page.dart';
 import 'forgot_password_verification_page.dart';
 import 'registration_page.dart';
@@ -25,7 +26,10 @@ class _ProfilePageState extends State<ProfilePage>{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const MaterialApp(
+      home: MyHomePage(),
+    );
+    /*return Scaffold(
       appBar: AppBar(
         title: Text("Profile Page",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -239,7 +243,7 @@ class _ProfilePageState extends State<ProfilePage>{
           ],
         ),
       ),
-    );
+    );*/
   }
 
 }
