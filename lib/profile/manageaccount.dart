@@ -30,6 +30,7 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
           },
           icon: Icon(Icons.arrow_back_ios),
         ),
+        centerTitle: true,
         title: Text('Manage account'),
         actions: [
           IconButton(
@@ -84,6 +85,27 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
                         ),
                       ),
                       backgroundImage: widget.currentUser.profilepic),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.green,
+                  elevation: 5,
+                  // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.alternate_email,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      '${widget.currentUser.email}',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Padding(
