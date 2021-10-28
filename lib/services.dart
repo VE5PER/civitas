@@ -51,10 +51,6 @@ goToPage(serviceName, context);
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "${number + 1}",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
             Icon(
               iconData,
               size: 50,
