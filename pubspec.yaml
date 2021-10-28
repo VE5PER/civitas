@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  
   carousel_slider: ^4.0.0
   image_picker: ^0.8.4+3
   settings_ui: ^1.0.0
@@ -23,6 +23,7 @@ dependencies:
   google_maps_flutter:
   weather: ^2.0.1
   http: ^0.13.4
+  cupertino_icons: ^1.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -30,15 +31,23 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico-Regular.ttf
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster-Regular.ttf
+          style: italic
+    - family: Henny Penny
+      fonts:
+        - asset: assets/fonts/HennyPenny-Regular.ttf
   uses-material-design: true
 
   assets:
     - assets/images/
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

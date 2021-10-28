@@ -51,10 +51,6 @@ goToPage(serviceName, context);
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "${number + 1}",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
             Icon(
               iconData,
               size: 50,
@@ -66,7 +62,16 @@ goToPage(serviceName, context);
           ],
         ),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25), color: Colors.green),
+            borderRadius: BorderRadius.circular(25),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Color(0xfff9f047),
+                Color(0xff0fd850)
+              ]
+            )
+        ),
       ),
     );
   }

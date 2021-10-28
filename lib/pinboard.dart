@@ -17,12 +17,17 @@ class _pinboardState extends State<pinboard> {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 250,
-        scrollDirection: Axis.horizontal,
+        enableInfiniteScroll: false,
+        reverse: false,
         autoPlay: true,
-        autoPlayInterval: const Duration(seconds: 2),
+        autoPlayInterval: Duration(seconds: 2),
+        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+        enlargeCenterPage: true,
+        scrollDirection: Axis.horizontal,
+
       ),
-      items: [pg1(),pg2(),empty()],
+      items: [pg1(),pg2(),empty(),empty()],
     );
   }
 }

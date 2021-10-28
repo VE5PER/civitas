@@ -11,7 +11,24 @@ class _pg2State extends State<pg2> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Hello Page2"),
-    );
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+                colors: [
+                  Color(0xfff83600),
+                  Color(0xfff9d423)
+                ]
+            )),
+        width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20),
+        child: const Center(
+          child: Text(
+            'Consider using the NEWS service to check local news',
+            style: TextStyle( fontSize: 28,fontFamily: 'Pacifico',letterSpacing: 5), textAlign: TextAlign.center,
+          ),
+        ));
   }
 }
