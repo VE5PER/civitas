@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 class Home extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     var uri = Uri.parse('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=aed2bd3bd2fa4012bea91fe0447cb0d1');
@@ -35,4 +33,4 @@ class Home extends StatelessWidget {
       
     
   }
-}
+}*/
