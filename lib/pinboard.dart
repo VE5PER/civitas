@@ -22,7 +22,7 @@ class _pinboardState extends State<pinboard> {
         autoPlay: true,
         autoPlayInterval: const Duration(seconds: 2),
       ),
-      items: [pg1(),pg2(),empty()],
+      items: [pg1(),empty(),empty(),empty()],
     );
   }
 }

@@ -3,9 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 import 'pages/splash_screen.dart';
 
-void main() {
-  runApp(LoginUiApp());
-}
+
 
 class LoginUiApp extends StatelessWidget {
 

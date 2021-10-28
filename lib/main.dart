@@ -1,8 +1,6 @@
-import 'package:civitas/services.dart';
-import 'package:civitas/sidedrawer.dart';
+
 import 'package:flutter/material.dart';
 
-import 'homepage.dart';
 import 'loginpage/login.dart';
 
 void main() {
