@@ -36,54 +36,56 @@ class _MyHomePageState extends State<MyHomePage> {
       name: 'kaipulla', email: 'kaipulla@pichu.com', location: 'anna nagar');
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          height: MediaQuery.of(context).size.height,
-          child: Center(child: Text("CIVITAS",style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,fontFamily: 'Pacifico')),),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color(0xff6a11cb),
-                    Color(0xff2575fc),
-                  ]
-              )
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          PopUpProfileButton(currentUser)
-          // IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
-        ],
-      ),
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            pinboard(),
-            Expanded(
-              child: Scrollbar(
-                thickness: 3,
-                radius: Radius.circular(10),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  children: [
-                    for (int i = 0; i < servicesList.length; i++)
-                      service(
-                        number: i,
-                        serviceName: servicesList[i],
-                        iconData: iconList[i],
-                      ),
-                  ],
-                ),
-              ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          flexibleSpace: Container(
+            height: MediaQuery.of(context).size.height,
+            child: Center(child: Text("CIVITAS",style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,fontFamily: 'Pacifico')),),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color(0xff6a11cb),
+                      Color(0xff2575fc),
+                    ]
+                )
             ),
+          ),
+          centerTitle: true,
+          actions: [
+            PopUpProfileButton(currentUser)
+            // IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
           ],
         ),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              pinboard(),
+              Expanded(
+                child: Scrollbar(
+                  thickness: 3,
+                  radius: Radius.circular(10),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    children: [
+                      for (int i = 0; i < servicesList.length; i++)
+                        service(
+                          number: i,
+                          serviceName: servicesList[i],
+                          iconData: iconList[i],
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        drawer: const draweritems(),
       ),
-      drawer: const draweritems(),
     );
   }
 }
