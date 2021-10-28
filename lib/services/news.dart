@@ -1,3 +1,4 @@
+import 'package:civitas/services/screen/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,5 +17,22 @@ class _newsState extends State<news> {
         title: Text("NEWS"),
       ),
     );
+  }
+}
+
+void main(){
+  runApp(NewsPage());
+}
+
+class NewsPage extends StatelessWidget {
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Home(),
+    );
+      
+    
   }
 }
