@@ -21,8 +21,17 @@ class _draweritemsState extends State<draweritems> {
     return SafeArea(
       child:
         Drawer(
-          child: Material(
-            color: Colors.indigoAccent,
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Color(0xff6a11cb),
+                  Color(0xff2575fc),
+                ]
+            )
+            ),
             child: ListView(
               padding: padding,
               children: <Widget>[
