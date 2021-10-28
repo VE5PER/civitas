@@ -28,7 +28,7 @@ class _pg1State extends State<pg1> {
         child: const Center(
           child: Text(
             'WELCOME TO CIVITAS',
-            style: TextStyle( fontSize: 30,fontFamily: 'Pacifico',letterSpacing: 5), textAlign: TextAlign.center,
+            style: TextStyle( fontSize: 30,fontFamily: 'Henny Penny',letterSpacing: 5), textAlign: TextAlign.center,
           ),
         ));
   }

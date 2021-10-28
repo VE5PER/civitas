@@ -3,7 +3,8 @@ import 'package:civitas/profile/profilecontent.dart';
 import 'package:flutter/material.dart';
 import 'popupscreen.dart';
 import 'package:image_picker/image_picker.dart';
-import 'customwidgets.dart';
+
+import 'getlocation.dart';
 
 class DisplayProfile extends StatefulWidget {
   userinfo currentUser;
@@ -184,7 +185,7 @@ class _DisplayProfileState extends State<DisplayProfile> {
                       ),
                     ),
                   ),
-                ),
+                ), //aadhar
                 Card(
                   elevation: 5,
                   shadowColor: Colors.black,
@@ -197,7 +198,14 @@ class _DisplayProfileState extends State<DisplayProfile> {
                       onChanged: (str) {
                         widget.currentUser.location = str;
                       },
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.location_on),
+                          onPressed: () {
+                            // Location l = Location();
+                            // l.getCurrentLocation();
+                          },
+                        ),
                         disabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.green),
                         ),
@@ -207,7 +215,7 @@ class _DisplayProfileState extends State<DisplayProfile> {
                       ),
                     ),
                   ),
-                ), //aadhar
+                ), //location
               ],
             ),
           ),

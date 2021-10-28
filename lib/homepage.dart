@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           flexibleSpace: Container(
             height: MediaQuery.of(context).size.height,
-            child: Center(child: Text("CIVITAS",style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,fontFamily: 'Pacifico')),),
+            child: Center(child: Text('CIVITAS',style: TextStyle(fontFamily: 'Henny Penny',fontSize: 25,)),),
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
