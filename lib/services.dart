@@ -62,7 +62,16 @@ goToPage(serviceName, context);
           ],
         ),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25), color: Colors.green),
+            borderRadius: BorderRadius.circular(25),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
+                Color(0xfff9f047),
+                Color(0xff0fd850)
+              ]
+            )
+        ),
       ),
     );
   }
