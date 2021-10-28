@@ -13,18 +13,23 @@ class news extends StatefulWidget {
 class _newsState extends State<news> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("NEWS"),
+   return MaterialApp(
+      title: 'Civitas News',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+
+
+        primarySwatch: Colors.blue,
       ),
+      home: HomeScreen(),
     );
   }
 }
 void main() {
-  runApp(MyApp());
+  runApp(news());
 }
 
-class MyApp extends StatelessWidget {
+/*class news extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +44,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
     );
   }
-}
+}*/
 
       
     

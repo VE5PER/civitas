@@ -6,7 +6,7 @@ import 'package:civitas/services/news/model.dart';
 
 Future<List<NewsApiModel>> getNews() async {
   Uri uri = Uri.parse(
-      "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=aed2bd3bd2fa4012bea91fe0447cb0d1");
+      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=aed2bd3bd2fa4012bea91fe0447cb0d1");
 
   final response = await http.get(uri);
 
