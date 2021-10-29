@@ -19,14 +19,41 @@ class garbageman extends StatefulWidget {
 
 class _garbagemanState extends State<garbageman> {
   Set<Marker> _markers = HashSet<Marker>();
+  Set<Polygon> _polygons = HashSet<Polygon>();
+  Set<Circle> _circles = HashSet<Circle>();
   late GoogleMapController _mapController;
   late BitmapDescriptor _markerIcon;
   List<Marker> myMarker = [];
+
   late LatLng tappedPoint;
+  @override
+  void initState() {
+    markerLoc();
+    super.initState();
+    _setCircles();
+  }
+  markerLoc(){
+    Marker loc1=Marker(
+      markerId: MarkerId('')
+
+
+    );
+  }
 
   void _setMarkerIcon() async {
     _markerIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(), 'assets/ping_icon.png');
+  }
+  void _setCircles(){
+    _circles.add(
+        Circle(
+          circleId: CircleId("0"),
+          center: LatLng(13.093206,80.276804),
+          radius: 1000,
+          fillColor: Color.fromRGBO(144, 238, 144, 0.25),
+          strokeWidth: 2
+    )
+    );
   }
 
   void _onMapCreated(GoogleMapController controller) {
@@ -54,15 +81,16 @@ class _garbagemanState extends State<garbageman> {
               myLocationButtonEnabled: true,
               onMapCreated: _onMapCreated,
               initialCameraPosition: CameraPosition(
-                target: LatLng(13.082680, 80.270721),
+                target: LatLng(13.093206,80.276804),
                 zoom: 12,
               ),
               markers: Set.from(myMarker),
               onTap: handleTap,
+              circles: _circles,
               //mapType: MapType.hybrid,
               //markers: _markers,
             ),
-            Container(
+            /*Container(
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.fromLTRB(0, 0, 60, 30),
               child: FloatingActionButton(
@@ -95,7 +123,7 @@ class _garbagemanState extends State<garbageman> {
                     }
                   },
                   child: const Icon(Icons.camera_alt_rounded)),
-            ),
+            ),*/
           ],
         ));
   }
