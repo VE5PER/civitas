@@ -34,10 +34,65 @@ class _garbagemanState extends State<garbageman> {
   }
   markerLoc(){
     Marker loc1=Marker(
-      markerId: MarkerId('')
-
-
+      markerId: MarkerId('Bin1'),
+      position: LatLng(13.093342,80.276159),
+      infoWindow: InfoWindow(title: 'Bin1'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueAzure
+      ),
+      onTap: tapRequest
     );
+    Marker loc2=Marker(
+        markerId: MarkerId('Bin2'),
+        position: LatLng(13.093211,80.277512),
+        infoWindow: InfoWindow(title: 'Bin2'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueAzure
+        ),
+        onTap: tapRequest
+    );
+    Marker loc3=Marker(
+        markerId: MarkerId('Bin3'),
+        position: LatLng(13.093697,80.276573),
+        infoWindow: InfoWindow(title: 'Bin3'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueAzure
+        ),
+        onTap: tapRequest
+    );
+    Marker loc4=Marker(
+        markerId: MarkerId('Bin4'),
+        position: LatLng(13.092589,80.275333),
+        infoWindow: InfoWindow(title: 'Bin4'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueAzure
+        ),
+        onTap: tapRequest
+    );
+    Marker loc5=Marker(
+        markerId: MarkerId('Bin5'),
+        position: LatLng(13.094105,80.276395),
+        infoWindow: InfoWindow(title: 'Bin5'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueAzure
+        ),
+        onTap: tapRequest
+    );
+    Marker loc6=Marker(
+        markerId: MarkerId('Bin6'),
+        position: LatLng(13.093613,80.277850),
+        infoWindow: InfoWindow(title: 'Bin6'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueAzure
+        ),
+        onTap: tapRequest()
+    );
+    myMarker.add(loc1);
+    myMarker.add(loc2);
+    myMarker.add(loc3);
+    myMarker.add(loc4);
+    myMarker.add(loc5);
+    myMarker.add(loc6);
   }
 
   void _setMarkerIcon() async {
@@ -49,7 +104,7 @@ class _garbagemanState extends State<garbageman> {
         Circle(
           circleId: CircleId("0"),
           center: LatLng(13.093206,80.276804),
-          radius: 1000,
+          radius: 500,
           fillColor: Color.fromRGBO(144, 238, 144, 0.25),
           strokeWidth: 2
     )
@@ -57,13 +112,8 @@ class _garbagemanState extends State<garbageman> {
   }
 
   void _onMapCreated(GoogleMapController controller) {
-    _mapController = controller;
     setState(() {
-      _markers.add(Marker(
-          markerId: MarkerId("0"),
-          position: LatLng(13.082680, 80.270721),
-          infoWindow: InfoWindow(title: "Chennai", snippet: "City"),
-          icon: _markerIcon));
+      _mapController = controller;
     });
   }
 
@@ -76,19 +126,23 @@ class _garbagemanState extends State<garbageman> {
         ),
         body: Stack(
           children: <Widget>[
-            GoogleMap(
-              myLocationEnabled: true,
-              myLocationButtonEnabled: true,
-              onMapCreated: _onMapCreated,
-              initialCameraPosition: CameraPosition(
-                target: LatLng(13.093206,80.276804),
-                zoom: 12,
+            Container(
+              height: MediaQuery.of(context).size.height-50,
+              width: MediaQuery.of(context).size.width,
+              child: GoogleMap(
+                myLocationEnabled: true,
+                myLocationButtonEnabled: true,
+                onMapCreated: _onMapCreated,
+                initialCameraPosition: CameraPosition(
+                  target: LatLng(13.093206,80.276804),
+                  zoom: 12,
+                ),
+                markers: Set.from(myMarker),
+                //onTap: handleTap,
+                circles: _circles,
+                //mapType: MapType.hybrid,
+                //markers: _markers,
               ),
-              markers: Set.from(myMarker),
-              onTap: handleTap,
-              circles: _circles,
-              //mapType: MapType.hybrid,
-              //markers: _markers,
             ),
             /*Container(
               alignment: Alignment.bottomCenter,
@@ -128,13 +182,20 @@ class _garbagemanState extends State<garbageman> {
         ));
   }
 
-  handleTap(LatLng tappedPoint) {
+  /*handleTap(LatLng tappedPoint) {
     setState(() {
       myMarker = [];
       myMarker.add(Marker(
         markerId: MarkerId(tappedPoint.toString()),
         position: tappedPoint,
       ));
+    });
+  }*/
+
+  tapRequest() {
+    setState(() {
+        build(context)=> PopUpScreen();
+
     });
   }
 }
