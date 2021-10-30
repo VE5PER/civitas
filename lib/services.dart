@@ -1,3 +1,4 @@
+import 'package:civitas/services/chatbot/chatbot.dart';
 import 'package:civitas/services/comingsoon.dart';
 import 'package:civitas/services/complaints.dart';
 import 'package:civitas/services/garbageman.dart';
@@ -93,7 +94,7 @@ void goToPage(String pageName, BuildContext context) {
     case 'Complaints':
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const complaints()),
+        MaterialPageRoute(builder: (context) => bot()),
       );
       break;
     case 'News':

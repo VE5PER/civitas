@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "civitas-chatbot-test-alpha",
+  "private_key_id": "f6e7166f4b0b819b53eaed0050785cb22570dadd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCkZ59DiYDCtDCN\n4a9cFjA44+e7imHjSqSCrhf8iFkaFiumrd5dBrEParkd/o/PWdboNEKrJnRUGUZ3\nUdYNFjtN71sk/f1etvBZ7+j6FPNhGS8OoTdrkgAChvfUoDtsKVzv1chbMEdYkrT9\n4WrkN1SWBXbp91ae5qMwjyxiqdsfMkcD1QaUiUzSfgqUJkavg07XP1YDn5v2mqRA\nEYrInj2+R6pOkPR22N4TjfIkt2XEqnNQYuOJS703PDKdZA+B9ak5FB6twhLTkSP8\nvW1SvzoRZ8oYVH/xLa+6c7lrcFxTZ9hLh1FYd78VZwwC3V1SWazwgKL1cQUdKVNg\n54eDLtvTAgMBAAECggEADzT+iFK5tEjSjO0pOU1cHIcIMlK0hz+qQ+Qyl8tM4prW\nYs6GWPh7fD+U6+9WAgn/VO8wk4A1FmpYGEVblU5PIgBX3+4Wd6JYTRlh5W/2qy6X\nKbVD2RFiKtmtJt/DX1fcHtsZc0Xd85VuZGVra7yqeE39F9snCf+vbJhxtJadjB8G\ndfB1R3l+nZu54DZkhZjkqRxW2q5AUfZ/cm1DCwlMM9upBx8RU3vin3Zmyo4Toa6r\nFaNOKvwT7UwGU4ZhFowTEef+oOs9a/L+DX0ki3RUJ49QELBAjs5dhSQqT/IIqOs0\newMr+xinUwRMhLlJiDj1OgCZxlC40yk9WIXRdUxkIQKBgQDTqlJ9+BahgUv6arTO\nBZnCiRvnh/aZdEr5hQc0r1muQRBTlcSnzq04/4+YMt3OUC4P+YhDHh75sTlnTiI4\nNagITAf4VmxnZd1F8VGUyKH81bxo4dAgFAjpQWVz/iTD5KI9YZbT9soXHtTc3kfI\nM5ArYiWLpantrEjHrp5D+QYyiwKBgQDG1yX/czLQLgunxW47F6a6lua0tg9rD+rC\n7ogJOhvMVh3g82je1bpg8iqDdXzC9l+jmdCVgtA9rgwZyuCvel6fEZLtH21jgJqy\nsi4wLzKfzaPLS55rjyXGaMSlCBjPH3gYf11m51pGmBNYECcuhXhye0ZoWufQah4Y\nljI09x6M2QKBgGG4o+c2j7Q2zo4pj5oCae+vf2uQkSBd2XODoEUJo9zYeyIr5iQX\nPlAvZOs+qLrkt692ZBugn2pmEPuJzjCnTRGvkIpt1BSUqejttd18F5V0VE0T3BPD\nTC3snFtF/VFXkDPIh2sK6FhuSpZCJV/ftnLhGDZ14JMzVFKkYrs9EEhrAoGAFWI9\n6+LvrAPHrRtGZ4R7ocVoujZ6IgFsNdqBNrzREICSZgbHWG+Tw6lHeSvBZxYn4ug/\nzlRrILb/BicTUsvOMT0ql+WxVeoWuPEAlp38y8LJwqs3NkoGvfe2bikYwe2YdMn9\nuXtX8g+YxPe3vwELmwQ25jIgjAFdizdb3uZUmsECgYBmnv9yKQJofWlsKf+hjxVQ\n4OfSQAd79xNZs4XLbGiinwQfmrR5H3SCCxDMeCvpny85F2oAAUkX3G3g4bXYIBJp\nbOWNqBefzL60WK0XsFyt34TqV3hIm9jjwqj3pnPrI++OThhuJ0MjWLz0Yhkwohdq\nsS46u5OCd2NyK8qQgQBgxg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dflow-key2@civitas-chatbot-test-alpha.iam.gserviceaccount.com",
+  "client_id": "111066871147039978897",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dflow-key2%40civitas-chatbot-test-alpha.iam.gserviceaccount.com"
+}
