@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import 'package:civitas/profile/customwidgets.dart';
 import 'package:civitas/profile/popupscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +20,80 @@ class _vehiclemngState extends State<vehiclemng> {
   late BitmapDescriptor _markerIcon;
   List<Marker> myMarker = [];
   late LatLng tappedPoint;
+  Set<Circle> _circles = HashSet<Circle>();
+  double pinPillPosition=-100;
 
   void _setMarkerIcon() async {
     _markerIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(), 'assets/ping_icon.png');
+  }
+  void _setCircles(){
+    _circles.add(
+        Circle(
+            circleId: CircleId("0"),
+            center: LatLng(13.093206,80.276804),
+            radius: 500,
+            fillColor: Color.fromRGBO(144, 238, 144, 0.25),
+            strokeWidth: 2
+        )
+    );
+  }
+  void initState() {
+    parkingLoc();
+    super.initState();
+    _setCircles();
+  }
+  parkingLoc(){
+    Marker loc1=Marker(
+        markerId: MarkerId('Parking1'),
+        position: LatLng(13.094331,80.277021),
+        infoWindow: InfoWindow(title: 'Parking1'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueOrange
+        ),
+        onTap: tapRequest
+    );
+    Marker loc2=Marker(
+        markerId: MarkerId('Parking2'),
+        position: LatLng(13.092439,80.277580),
+        infoWindow: InfoWindow(title: 'Parking2'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueOrange
+        ),
+        onTap: tapRequest
+    );
+    Marker loc3=Marker(
+        markerId: MarkerId('Parking3'),
+        position: LatLng(13.096285,80.279007),
+        infoWindow: InfoWindow(title: 'Parking3'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueOrange
+        ),
+        onTap: tapRequest
+    );
+    Marker loc4=Marker(
+        markerId: MarkerId('Parking4'),
+        position: LatLng(13.090255,80.277750),
+        infoWindow: InfoWindow(title: 'Parking4'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueOrange
+        ),
+        onTap: tapRequest
+    );
+    Marker loc5=Marker(
+        markerId: MarkerId('Parking5'),
+        position: LatLng(13.094728,80.275453),
+        infoWindow: InfoWindow(title: 'Parking5'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+            BitmapDescriptor.hueOrange
+        ),
+        onTap: tapRequest
+    );
+    myMarker.add(loc1);
+    myMarker.add(loc2);
+    myMarker.add(loc3);
+    myMarker.add(loc4);
+    myMarker.add(loc5);
   }
 
   @override
@@ -41,11 +112,50 @@ class _vehiclemngState extends State<vehiclemng> {
                 zoom: 12,
               ),
               markers: Set.from(myMarker),
-              onTap: handleTap,
+              onMapCreated: (GoogleMapController controller){
+                controller.setMapStyle(Utils.mapStyles);
+                _mapController=controller;
+              },
+              //onTap: handleTap,
+              circles: _circles,
               //mapType: MapType.hybrid,
               //markers: _markers,
             ),
-            Container(
+            AnimatedPositioned(
+              bottom: pinPillPosition,
+              right: 0,
+              left: 0,
+              duration: Duration(milliseconds: 200),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(blurRadius: 20,offset: Offset.zero,color: Colors.grey.withOpacity(0.5))
+                    ]
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                          child: roundedButton(
+                            buttonColor: Colors.indigo,
+                            buttonText: 'Report Bin Full',
+                            returnValue: 'Report Bin Full',
+                          )
+                      )
+                    ],
+                  ),
+                ),
+                
+              ),
+            )
+            /*Container(
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.fromLTRB(0, 0, 60, 30),
               child: FloatingActionButton(
@@ -78,18 +188,32 @@ class _vehiclemngState extends State<vehiclemng> {
                     }
                   },
                   child: const Icon(Icons.directions_car)),
-            ),
+            ),*/
           ],
         ));
   }
 
-  handleTap(LatLng tappedPoint) {
+  /*handleTap() {
     setState(() {
-      myMarker = [];
-      myMarker.add(Marker(
-        markerId: MarkerId(tappedPoint.toString()),
-        position: tappedPoint,
-      ));
+
     });
+  }*/
+tapRequest(){
+
+}
+
+}
+class Utils{
+  static String mapStyles=''' 
+  [
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
   }
+]
+  ''';
 }

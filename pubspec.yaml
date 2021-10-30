@@ -43,6 +43,9 @@ flutter:
     - family: Henny Penny
       fonts:
         - asset: assets/fonts/HennyPenny-Regular.ttf
+    - family: Civitas
+      fonts:
+        - asset: assets/fonts/civitas_icon.ttf
   uses-material-design: true
 
   assets:

@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:collection';
 
+import 'package:civitas/profile/customwidgets.dart';
 import 'package:civitas/profile/popupscreen.dart';
+import 'package:civitas/services/garbagemanwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,6 +26,8 @@ class _garbagemanState extends State<garbageman> {
   late GoogleMapController _mapController;
   late BitmapDescriptor _markerIcon;
   List<Marker> myMarker = [];
+  double pinPillPosition=-100;
+  double PIN_INVISIBLE_POSITION = -220;
 
   late LatLng tappedPoint;
   @override
@@ -112,6 +116,7 @@ class _garbagemanState extends State<garbageman> {
   }
 
   void _onMapCreated(GoogleMapController controller) {
+    controller.setMapStyle(Utils.mapStyles);
     setState(() {
       _mapController = controller;
     });
@@ -138,7 +143,9 @@ class _garbagemanState extends State<garbageman> {
                   zoom: 12,
                 ),
                 markers: Set.from(myMarker),
-                //onTap: handleTap,
+                onTap: (LatLng loc){
+                  this.pinPillPosition=PIN_INVISIBLE_POSITION;
+                },
                 circles: _circles,
                 //mapType: MapType.hybrid,
                 //markers: _markers,
@@ -198,4 +205,18 @@ class _garbagemanState extends State<garbageman> {
 
     });
   }
+}
+class Utils{
+  static String mapStyles=''' 
+  [
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+]
+  ''';
 }

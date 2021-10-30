@@ -57,10 +57,8 @@ class _SplashScreenState extends State<SplashScreen> {
             width: 140.0,
             child: Center(
               child: ClipOval(
-                child: Icon(
-                  Icons.android_outlined,
-                  size: 128,
-                ), //put your logo here
+                child: Image.asset('assets/images/Civitas_notext_png.png',width: 400.0,height: 400.0,),
+              //put your logo here
               ),
             ),
             decoration: BoxDecoration(
