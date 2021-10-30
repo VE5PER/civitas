@@ -62,6 +62,7 @@ class _serviceState extends State<service> {
             Text(
               serviceName,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             )
           ],
         ),

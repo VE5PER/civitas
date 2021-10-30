@@ -18,7 +18,7 @@ class _comingsoonState extends State<comingsoon> {
       body: Center(
           child: Icon(
         Icons.report_gmailerrorred_outlined,
-        size: 500,
+        size: 250,
       )),
     );
   }
