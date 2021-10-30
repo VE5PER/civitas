@@ -80,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           number: i,
                           serviceName: servicesList[i],
                           iconData: iconList[i],
+                          currentUser: currentUser,
                         ),
                     ],
                   ),
