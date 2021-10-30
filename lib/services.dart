@@ -1,8 +1,9 @@
 import 'package:civitas/services/chatbot/chatbot.dart';
+import 'package:civitas/profile/profilecontent.dart';
 import 'package:civitas/services/comingsoon.dart';
 import 'package:civitas/services/complaints.dart';
 import 'package:civitas/services/garbageman.dart';
-import 'package:civitas/services/gossips.dart';
+import 'package:civitas/chatpage/gossips.dart';
 import 'package:civitas/services/news.dart';
 import 'package:civitas/services/vehiclemng.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,19 +13,21 @@ class service extends StatefulWidget {
   final int number;
   final String serviceName;
   final IconData iconData;
+  userinfo currentUser;
 
-  const service({
+  service({
     Key? key,
     required this.number,
     required this.serviceName,
     required this.iconData,
+    required this.currentUser
   }) : super(key: key);
 
   @override
   _serviceState createState() => _serviceState(
         number: this.number,
         serviceName: this.serviceName,
-        iconData: this.iconData,
+        iconData: this.iconData, currentUser: currentUser,
       );
 }
 
@@ -32,17 +35,19 @@ class _serviceState extends State<service> {
   int number;
   String serviceName;
   IconData iconData;
+  userinfo currentUser;
 
   _serviceState({
     required this.number,
     required this.serviceName,
     required this.iconData,
+    required this.currentUser,
   });
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        goToPage(serviceName, context);
+        goToPage(serviceName, currentUser,context,);
       },
       child: Container(
         width: 25,
@@ -71,7 +76,7 @@ class _serviceState extends State<service> {
   }
 }
 
-void goToPage(String pageName, BuildContext context) {
+void goToPage(String pageName, userinfo currentUser,BuildContext context) {
   switch (pageName) {
     case 'Trash Man':
       Navigator.push(
@@ -88,7 +93,7 @@ void goToPage(String pageName, BuildContext context) {
     case 'Gossips':
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const gossips()),
+        MaterialPageRoute(builder: (context) => gossips(currentUser)),
       );
       break;
     case 'Complaints':
