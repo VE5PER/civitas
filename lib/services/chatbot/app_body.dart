@@ -18,7 +18,7 @@ class AppBody extends StatelessWidget {
         bool isUserMessage = obj['isUserMessage'] ?? false;
         return Row(
           mainAxisAlignment:
-          isUserMessage ? MainAxisAlignment.end : MainAxisAlignment.start,
+              isUserMessage ? MainAxisAlignment.end : MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             _MessageContainer(

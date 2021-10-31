@@ -21,19 +21,25 @@ class _notificationState extends State<notification> {
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Card(
-
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Row(
                   children: [
                     Icon(Icons.notification_important),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Container(
                       width: 250,
                       child: Text(
-                          "Local garbage reported full. Authorities will take care of it shortly", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                        "Local garbage reported full. Authorities will take care of it shortly",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
@@ -43,19 +49,25 @@ class _notificationState extends State<notification> {
               ),
               color: Colors.grey,
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Card(
-
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Row(
                   children: [
                     Icon(Icons.notification_important),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Container(
                       width: 250,
                       child: Text(
-                        "Parking spot marked", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                        "Parking spot marked",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),

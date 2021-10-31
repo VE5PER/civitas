@@ -24,9 +24,10 @@ class _pg4State extends State<pg4> {
           child: Text(
             'You can use the AI-powered Chat-Bot to request assistance',
             style: TextStyle(
-                fontSize: 22, fontFamily: 'Pacifico',letterSpacing: 3,
-            height: 1.3),
-
+                fontSize: 22,
+                fontFamily: 'Pacifico',
+                letterSpacing: 3,
+                height: 1.3),
             textAlign: TextAlign.center,
           ),
         ));

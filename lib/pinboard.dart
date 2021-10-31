@@ -28,7 +28,7 @@ class _pinboardState extends State<pinboard> {
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
       ),
-      items: [pg1(), pg2(), pg3(),pg4()],
+      items: [pg1(), pg2(), pg3(), pg4()],
     );
   }
 }

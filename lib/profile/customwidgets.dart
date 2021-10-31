@@ -21,19 +21,19 @@ class roundedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
           onPressed: () {
-            final snackBar = SnackBar(content: Row(
-              children: [
-                Icon(
-                  Icons.info,
-                  size: 15,
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Text('Action has been accomplished'),
-              ],
-
-            ),
+            final snackBar = SnackBar(
+              content: Row(
+                children: [
+                  Icon(
+                    Icons.info,
+                    size: 15,
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Text('Action has been accomplished'),
+                ],
+              ),
               elevation: 15,
               backgroundColor: Colors.cyan,
               duration: Duration(seconds: 3),
@@ -43,7 +43,8 @@ class roundedButton extends StatelessWidget {
                   width: 2,
                 ),
               ),
-              behavior: SnackBarBehavior.floating,);
+              behavior: SnackBarBehavior.floating,
+            );
 
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
             Navigator.pop(context, returnValue);

@@ -15,19 +15,20 @@ class service extends StatefulWidget {
   final IconData iconData;
   userinfo currentUser;
 
-  service({
-    Key? key,
-    required this.number,
-    required this.serviceName,
-    required this.iconData,
-    required this.currentUser
-  }) : super(key: key);
+  service(
+      {Key? key,
+      required this.number,
+      required this.serviceName,
+      required this.iconData,
+      required this.currentUser})
+      : super(key: key);
 
   @override
   _serviceState createState() => _serviceState(
         number: this.number,
         serviceName: this.serviceName,
-        iconData: this.iconData, currentUser: currentUser,
+        iconData: this.iconData,
+        currentUser: currentUser,
       );
 }
 
@@ -47,7 +48,11 @@ class _serviceState extends State<service> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        goToPage(serviceName, currentUser,context,);
+        goToPage(
+          serviceName,
+          currentUser,
+          context,
+        );
       },
       child: Container(
         width: 25,
@@ -77,7 +82,7 @@ class _serviceState extends State<service> {
   }
 }
 
-void goToPage(String pageName, userinfo currentUser,BuildContext context) {
+void goToPage(String pageName, userinfo currentUser, BuildContext context) {
   switch (pageName) {
     case 'Trash Man':
       Navigator.push(

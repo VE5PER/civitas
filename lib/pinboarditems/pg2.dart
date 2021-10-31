@@ -24,7 +24,10 @@ class _pg2State extends State<pg2> {
           child: Text(
             'Consider using the NEWS service to check local news',
             style: TextStyle(
-                fontSize: 22, fontFamily: 'Pacifico', letterSpacing: 2,height: 1.3),
+                fontSize: 22,
+                fontFamily: 'Pacifico',
+                letterSpacing: 2,
+                height: 1.3),
             textAlign: TextAlign.center,
           ),
         ));

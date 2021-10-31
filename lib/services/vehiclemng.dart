@@ -22,36 +22,34 @@ class _vehiclemngState extends State<vehiclemng> {
   List<Marker> myMarker = [];
   late LatLng tappedPoint;
   Set<Circle> _circles = HashSet<Circle>();
-  double pinPillPosition=-100;
+  double pinPillPosition = -100;
 
   void _setMarkerIcon() async {
     _markerIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(), 'assets/ping_icon.png');
   }
-  void _setCircles(){
-    _circles.add(
-        Circle(
-            circleId: CircleId("0"),
-            center: LatLng(13.093206,80.276804),
-            radius: 500,
-            fillColor: Color.fromRGBO(144, 238, 144, 0.25),
-            strokeWidth: 2
-        )
-    );
+
+  void _setCircles() {
+    _circles.add(Circle(
+        circleId: CircleId("0"),
+        center: LatLng(13.093206, 80.276804),
+        radius: 500,
+        fillColor: Color.fromRGBO(144, 238, 144, 0.25),
+        strokeWidth: 2));
   }
+
   void initState() {
     parkingLoc();
     super.initState();
     _setCircles();
   }
-  parkingLoc(){
-    Marker loc1=Marker(
-        markerId: MarkerId('Parking1'),
-        position: LatLng(13.094331,80.277021),
-        infoWindow: InfoWindow(title: 'Parking1'),
-        icon: BitmapDescriptor.defaultMarkerWithHue(
-            BitmapDescriptor.hueOrange
-        ),
+
+  parkingLoc() {
+    Marker loc1 = Marker(
+      markerId: MarkerId('Parking1'),
+      position: LatLng(13.094331, 80.277021),
+      infoWindow: InfoWindow(title: 'Parking1'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
       onTap: () async {
         String selected = await showModalBottomSheet(
           context: context,
@@ -59,13 +57,11 @@ class _vehiclemngState extends State<vehiclemng> {
         );
       },
     );
-    Marker loc2=Marker(
-        markerId: MarkerId('Parking2'),
-        position: LatLng(13.092439,80.277580),
-        infoWindow: InfoWindow(title: 'Parking2'),
-        icon: BitmapDescriptor.defaultMarkerWithHue(
-            BitmapDescriptor.hueOrange
-        ),
+    Marker loc2 = Marker(
+      markerId: MarkerId('Parking2'),
+      position: LatLng(13.092439, 80.277580),
+      infoWindow: InfoWindow(title: 'Parking2'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
       onTap: () async {
         String selected = await showModalBottomSheet(
           context: context,
@@ -73,13 +69,11 @@ class _vehiclemngState extends State<vehiclemng> {
         );
       },
     );
-    Marker loc3=Marker(
-        markerId: MarkerId('Parking3'),
-        position: LatLng(13.096285,80.279007),
-        infoWindow: InfoWindow(title: 'Parking3'),
-        icon: BitmapDescriptor.defaultMarkerWithHue(
-            BitmapDescriptor.hueOrange
-        ),
+    Marker loc3 = Marker(
+      markerId: MarkerId('Parking3'),
+      position: LatLng(13.096285, 80.279007),
+      infoWindow: InfoWindow(title: 'Parking3'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
       onTap: () async {
         String selected = await showModalBottomSheet(
           context: context,
@@ -87,13 +81,11 @@ class _vehiclemngState extends State<vehiclemng> {
         );
       },
     );
-    Marker loc4=Marker(
-        markerId: MarkerId('Parking4'),
-        position: LatLng(13.090255,80.277750),
-        infoWindow: InfoWindow(title: 'Parking4'),
-        icon: BitmapDescriptor.defaultMarkerWithHue(
-            BitmapDescriptor.hueOrange
-        ),
+    Marker loc4 = Marker(
+      markerId: MarkerId('Parking4'),
+      position: LatLng(13.090255, 80.277750),
+      infoWindow: InfoWindow(title: 'Parking4'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
       onTap: () async {
         String selected = await showModalBottomSheet(
           context: context,
@@ -101,13 +93,11 @@ class _vehiclemngState extends State<vehiclemng> {
         );
       },
     );
-    Marker loc5=Marker(
-        markerId: MarkerId('Parking5'),
-        position: LatLng(13.094728,80.275453),
-        infoWindow: InfoWindow(title: 'Parking5'),
-        icon: BitmapDescriptor.defaultMarkerWithHue(
-            BitmapDescriptor.hueOrange
-        ),
+    Marker loc5 = Marker(
+      markerId: MarkerId('Parking5'),
+      position: LatLng(13.094728, 80.275453),
+      infoWindow: InfoWindow(title: 'Parking5'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
       onTap: () async {
         String selected = await showModalBottomSheet(
           context: context,
@@ -138,9 +128,9 @@ class _vehiclemngState extends State<vehiclemng> {
                 zoom: 12,
               ),
               markers: Set.from(myMarker),
-              onMapCreated: (GoogleMapController controller){
+              onMapCreated: (GoogleMapController controller) {
                 controller.setMapStyle(Utils.mapStyles);
-                _mapController=controller;
+                _mapController = controller;
               },
               //onTap: handleTap,
               circles: _circles,
@@ -158,27 +148,27 @@ class _vehiclemngState extends State<vehiclemng> {
                   margin: EdgeInsets.all(20),
                   height: 70,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(blurRadius: 20,offset: Offset.zero,color: Colors.grey.withOpacity(0.5))
-                    ]
-                  ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            blurRadius: 20,
+                            offset: Offset.zero,
+                            color: Colors.grey.withOpacity(0.5))
+                      ]),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Expanded(
                           child: roundedButton(
-                            buttonColor: Colors.indigo,
-                            buttonText: 'Report Bin Full',
-                            returnValue: 'Report Bin Full',
-                          )
-                      )
+                        buttonColor: Colors.indigo,
+                        buttonText: 'Report Bin Full',
+                        returnValue: 'Report Bin Full',
+                      ))
                     ],
                   ),
                 ),
-                
               ),
             )
             /*Container(
@@ -225,8 +215,9 @@ class _vehiclemngState extends State<vehiclemng> {
     });
   }*/
 }
-class Utils{
-  static String mapStyles=''' 
+
+class Utils {
+  static String mapStyles = ''' 
   [
   {
     "elementType": "labels.icon",
