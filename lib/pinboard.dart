@@ -3,6 +3,7 @@ import 'package:civitas/pinboarditems/empty.dart';
 import 'package:civitas/pinboarditems/pg1.dart';
 import 'package:civitas/pinboarditems/pg2.dart';
 import 'package:civitas/pinboarditems/pg3.dart';
+import 'package:civitas/pinboarditems/pg4.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _pinboardState extends State<pinboard> {
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
       ),
-      items: [pg1(), pg2(), pg3(), empty(), empty()],
+      items: [pg1(), pg2(), pg3(),pg4(), empty()],
     );
   }
 }
