@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:civitas/profile/customwidgets.dart';
 import 'package:civitas/profile/popupscreen.dart';
+import 'package:civitas/services/vehiclemanwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -51,7 +52,12 @@ class _vehiclemngState extends State<vehiclemng> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueOrange
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => vehiclemanwidget(),
+        );
+      },
     );
     Marker loc2=Marker(
         markerId: MarkerId('Parking2'),
@@ -60,7 +66,12 @@ class _vehiclemngState extends State<vehiclemng> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueOrange
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => vehiclemanwidget(),
+        );
+      },
     );
     Marker loc3=Marker(
         markerId: MarkerId('Parking3'),
@@ -69,7 +80,12 @@ class _vehiclemngState extends State<vehiclemng> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueOrange
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => vehiclemanwidget(),
+        );
+      },
     );
     Marker loc4=Marker(
         markerId: MarkerId('Parking4'),
@@ -78,7 +94,12 @@ class _vehiclemngState extends State<vehiclemng> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueOrange
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => vehiclemanwidget(),
+        );
+      },
     );
     Marker loc5=Marker(
         markerId: MarkerId('Parking5'),
@@ -87,7 +108,12 @@ class _vehiclemngState extends State<vehiclemng> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueOrange
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => vehiclemanwidget(),
+        );
+      },
     );
     myMarker.add(loc1);
     myMarker.add(loc2);
@@ -198,10 +224,6 @@ class _vehiclemngState extends State<vehiclemng> {
 
     });
   }*/
-tapRequest(){
-
-}
-
 }
 class Utils{
   static String mapStyles=''' 

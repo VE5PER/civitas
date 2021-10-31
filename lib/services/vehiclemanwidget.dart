@@ -2,7 +2,7 @@ import 'package:civitas/profile/customwidgets.dart';
 import 'package:flutter/material.dart';
 import 'customised.dart';
 
-class garbagewidget extends StatelessWidget {
+class vehiclemanwidget extends StatelessWidget {
   late String selected;
 
   @override
@@ -31,8 +31,8 @@ class garbagewidget extends StatelessWidget {
           ),
           roundedButton(
             buttonColor: Colors.blue,
-            buttonText: 'Report Bin Full ',
-            returnValue: 'Report Bin Full',
+            buttonText: 'Mark Spot',
+            returnValue: 'Mark Spot',
           ),
         ],
       ),

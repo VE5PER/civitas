@@ -10,6 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
+
 class garbageman extends StatefulWidget {
   const garbageman({Key? key}) : super(key: key);
 
@@ -44,7 +45,12 @@ class _garbagemanState extends State<garbageman> {
       icon: BitmapDescriptor.defaultMarkerWithHue(
         BitmapDescriptor.hueAzure
       ),
-      onTap: tapRequest
+      onTap: () async {
+    String selected = await showModalBottomSheet(
+    context: context,
+    builder: (context) => garbagewidget(),
+    );
+    },
     );
     Marker loc2=Marker(
         markerId: MarkerId('Bin2'),
@@ -53,7 +59,13 @@ class _garbagemanState extends State<garbageman> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueAzure
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => garbagewidget(),
+        );
+      },
+        //onTap: tapRequest
     );
     Marker loc3=Marker(
         markerId: MarkerId('Bin3'),
@@ -62,7 +74,13 @@ class _garbagemanState extends State<garbageman> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueAzure
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => garbagewidget(),
+        );
+      },
+        //onTap: tapRequest
     );
     Marker loc4=Marker(
         markerId: MarkerId('Bin4'),
@@ -71,7 +89,13 @@ class _garbagemanState extends State<garbageman> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueAzure
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => garbagewidget(),
+        );
+      },
+        //onTap: tapRequest
     );
     Marker loc5=Marker(
         markerId: MarkerId('Bin5'),
@@ -80,7 +104,13 @@ class _garbagemanState extends State<garbageman> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueAzure
         ),
-        onTap: tapRequest
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => garbagewidget(),
+        );
+      },
+        //onTap: tapRequest
     );
     Marker loc6=Marker(
         markerId: MarkerId('Bin6'),
@@ -89,7 +119,13 @@ class _garbagemanState extends State<garbageman> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
             BitmapDescriptor.hueAzure
         ),
-        onTap: tapRequest()
+      onTap: () async {
+        String selected = await showModalBottomSheet(
+          context: context,
+          builder: (context) => garbagewidget(),
+        );
+      },
+        //onTap: tapRequest()
     );
     myMarker.add(loc1);
     myMarker.add(loc2);
@@ -143,9 +179,9 @@ class _garbagemanState extends State<garbageman> {
                   zoom: 12,
                 ),
                 markers: Set.from(myMarker),
-                onTap: (LatLng loc){
+                /*onTap: (LatLng loc){
                   this.pinPillPosition=PIN_INVISIBLE_POSITION;
-                },
+                },*/
                 circles: _circles,
                 //mapType: MapType.hybrid,
                 //markers: _markers,
@@ -199,12 +235,7 @@ class _garbagemanState extends State<garbageman> {
     });
   }*/
 
-  tapRequest() {
-    setState(() {
-        build(context)=> PopUpScreen();
 
-    });
-  }
 }
 class Utils{
   static String mapStyles=''' 
