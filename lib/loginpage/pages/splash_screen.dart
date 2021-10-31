@@ -53,15 +53,11 @@ class _SplashScreenState extends State<SplashScreen> {
         duration: Duration(milliseconds: 1200),
         child: Center(
           child: Container(
-            height: 140.0,
-            width: 140.0,
-            child: Center(
-              child: ClipOval(
-                child: Image.asset('assets/images/Civitas_notext_png.png',width: 400.0,height: 400.0,),
-              //put your logo here
-              ),
-            ),
+            height: 200.0,
+            width: 200.0,
+
             decoration: BoxDecoration(
+
                 shape: BoxShape.circle,
                 color: Colors.white,
                 boxShadow: [
@@ -72,6 +68,13 @@ class _SplashScreenState extends State<SplashScreen> {
                     spreadRadius: 2.0,
                   )
                 ]),
+            child: FractionalTranslation(
+              translation: Offset(0.0, 0.1),
+              child: Image.asset(
+                'assets/images/Civitas1.png',
+                width: MediaQuery.of(context).size.width,
+              ),
+            ),
           ),
         ),
       ),
