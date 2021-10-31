@@ -35,7 +35,7 @@ class _cbotState extends State<cbot> {
             Navigator.of(context).pop(true);
           },
         ),
-        title: Text(widget.title ?? 'DialogFlowtter app'),
+        title: Text(widget.title ?? 'Civitas Complaint Bot'),
       ),
       body: Column(
         children: [
